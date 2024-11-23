@@ -3,10 +3,13 @@ from navigation import MainNavigation
 from tools.item_editor import ItemEditor
 from tools.other_editor import OtherEditor
 
+customtkinter.set_default_color_theme("assets/themes/zennr-theme.json")
+
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         self.geometry("1280x720")
+        self.minsize(1280, 720)
         self.title("Zennr - Flyff Editor")
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
