@@ -4,6 +4,7 @@ from tools.item_editor import ItemEditor
 from tools.other_editor import OtherEditor
 
 customtkinter.set_default_color_theme("assets/themes/zennr-theme.json")
+customtkinter.set_appearance_mode("Dark")
 
 class App(customtkinter.CTk):
     def __init__(self):

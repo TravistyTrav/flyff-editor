@@ -1,5 +1,6 @@
 import customtkinter
 from assets.icons.icons import item_editor_icon_ctk, cog_icon_ctk, info_icon_ctk
+from PIL import Image, ImageTk
 
 class MainNavigation(customtkinter.CTkFrame):
     def __init__(self, master, switch_frame, **kwargs):
@@ -15,8 +16,11 @@ class MainNavigation(customtkinter.CTkFrame):
         self.grid_rowconfigure(5, weight=0)
         self.grid_rowconfigure(6, weight=0)
 
-        self.label = customtkinter.CTkLabel(self, text="Main Navigation")
-        self.label.grid(row=0, column=0, padx=20, pady=10)
+        # Load logo image
+        self.logo_image = customtkinter.CTkImage(Image.open("assets/icons/flyff_constume_box.png"), size=(60, 48.62))
+        # Replace "Main Navigation" text with logo image
+        self.logo_label = customtkinter.CTkLabel(self, image=self.logo_image, text="")
+        self.logo_label.grid(row=0, column=0, padx=20, pady=10)
 
         self.item_editor_button = customtkinter.CTkButton(self, text="Item Editor", image=item_editor_icon_ctk, command=lambda: self.switch_frame("ItemEditor"))
         self.item_editor_button.grid(row=1, column=0, padx=20, pady=10)
